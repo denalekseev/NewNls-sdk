@@ -55,8 +55,26 @@ namespace NewNlsSdk
         public ReceiptStatusResponse GetReceiptStatus(string depCode, string warehouseCode, string docNumber) =>
             Get<ReceiptStatusResponse>($"/api/v1/Receipt/status", r => AddQueryString(r, new Dictionary<string, object> { { "depCode", depCode }, { "warehouseCode", warehouseCode }, { "docNumber", docNumber } }));
 
+		/// <summary>
+		///Отправить данные для создания документа заказа
+		/// </summary>
+		public OrderResponse CreateOrder(OrderRequest req) =>
+			Post<OrderResponse>($"/api/v1/Order", req, r => InitAuthRequest(r));
 
-        public void InitRequest(IRestRequest initReq)
+		/// <summary>
+		/// Получает статус документа заказа
+		/// </summary>
+		public OrderStatusResponse GetOrderStatus(string depCode, string warehouseCode, string docNumber) =>
+			Get<OrderStatusResponse>($"/api/v1/Order/status", r => AddQueryString(r, new Dictionary<string, object> { { "depCode", depCode }, { "warehouseCode", warehouseCode }, { "docNumber", docNumber } }));
+
+		/// <summary>
+		///Отправить данные для создания документа отгрузки
+		/// </summary>
+		public OrderResponse CreateShipment(ShipmentRequest req) =>
+			Post<OrderResponse>($"/api/v1/Shipment", req, r => InitAuthRequest(r));
+
+
+		public void InitRequest(IRestRequest initReq)
         {
             initReq.AddHeader("Content-Type", "application/json");
             initReq.AddHeader("Accept", "application/json");
