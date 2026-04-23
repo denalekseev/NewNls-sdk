@@ -41,42 +41,8 @@ namespace NewNlsRemoteClient.Model
         /// <param name="sscc">Код контейнера.</param>
         /// <param name="multiplicity">Кратность.</param>
         /// <param name="price">Цена в рублях.</param>
-        public OrderItemDTO(string number = default(string), string prdCode = default(string), int? qty = default(int?), int? qtyShipPacking = default(int?), string quality = default(string), DateTime? expDate = default(DateTime?), string lot = default(string), string sscc = default(string), int? multiplicity = default(int?), float? price = default(float?))
+        public OrderItemDTO()
         {
-            // to ensure "prdCode" is required (not null)
-            if (prdCode == null)
-            {
-                throw new InvalidDataException("prdCode is a required property for OrderItemDTO and cannot be null");
-            }
-            else
-            {
-                this.PrdCode = prdCode;
-            }
-            // to ensure "qty" is required (not null)
-            if (qty == null)
-            {
-                throw new InvalidDataException("qty is a required property for OrderItemDTO and cannot be null");
-            }
-            else
-            {
-                this.Qty = qty;
-            }
-            // to ensure "quality" is required (not null)
-            if (quality == null)
-            {
-                throw new InvalidDataException("quality is a required property for OrderItemDTO and cannot be null");
-            }
-            else
-            {
-                this.Quality = quality;
-            }
-            this.Number = number;
-            this.QtyShipPacking = qtyShipPacking;
-            this.ExpDate = expDate;
-            this.Lot = lot;
-            this.Sscc = sscc;
-            this.Multiplicity = multiplicity;
-            this.Price = price;
         }
         
         /// <summary>

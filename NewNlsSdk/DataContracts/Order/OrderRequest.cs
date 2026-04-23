@@ -189,7 +189,7 @@ namespace NewNlsRemoteClient.Model
         /// </summary>
         /// <value>Ожидаемая дата отгрузки</value>
         [DataMember(Name="expDate", EmitDefaultValue=false)]
-        public DateTime? ExpDate { get; set; }
+        public string ExpDate { get; set; }
 
         /// <summary>
         /// Ожидаемая дата доставки

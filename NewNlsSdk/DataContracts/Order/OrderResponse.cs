@@ -33,26 +33,8 @@ namespace NewNlsRemoteClient.Model
         /// </summary>
         /// <param name="isSuccess">true - истина, false - ошибка (required).</param>
         /// <param name="message">Сообщение ошибки (required).</param>
-        public OrderResponse(bool? isSuccess = default(bool?), string message = default(string))
+        public OrderResponse()
         {
-            // to ensure "isSuccess" is required (not null)
-            if (isSuccess == null)
-            {
-                throw new InvalidDataException("isSuccess is a required property for OrderResponse and cannot be null");
-            }
-            else
-            {
-                this.IsSuccess = isSuccess;
-            }
-            // to ensure "message" is required (not null)
-            if (message == null)
-            {
-                throw new InvalidDataException("message is a required property for OrderResponse and cannot be null");
-            }
-            else
-            {
-                this.Message = message;
-            }
         }
         
         /// <summary>
