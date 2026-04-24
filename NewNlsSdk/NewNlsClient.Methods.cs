@@ -76,7 +76,7 @@ namespace NewNlsSdk
 		/// <summary>
 		///Отмена документа
 		/// </summary>
-		public DocumentCancelResponse CreateShipment(DocumentCancelRequest req) =>
+		public DocumentCancelResponse DocumentCancel(DocumentCancelRequest req) =>
 			Post<DocumentCancelResponse>($"/api/v1/Documents/cancel", req, r => InitAuthRequest(r));
 
 
