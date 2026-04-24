@@ -73,6 +73,12 @@ namespace NewNlsSdk
 		public OrderResponse CreateShipment(ShipmentRequest req) =>
 			Post<OrderResponse>($"/api/v1/Shipment", req, r => InitAuthRequest(r));
 
+		/// <summary>
+		///Отмена документа
+		/// </summary>
+		public DocumentCancelResponse CreateShipment(DocumentCancelRequest req) =>
+			Post<DocumentCancelResponse>($"/api/v1/Documents/cancel", req, r => InitAuthRequest(r));
+
 
 		public void InitRequest(IRestRequest initReq)
         {
