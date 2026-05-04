@@ -146,7 +146,7 @@ namespace NewNlsRemoteClient.Model
         /// </summary>
         /// <value>Ожидаемые дата и время прибытия</value>
         [DataMember(Name="estDate", EmitDefaultValue=false)]
-        public DateTime? EstDate { get; set; }
+        public string EstDate { get; set; }
 
         /// <summary>
         /// Примечание
