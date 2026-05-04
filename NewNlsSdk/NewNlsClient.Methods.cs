@@ -79,6 +79,12 @@ namespace NewNlsSdk
 		public DocumentCancelResponse DocumentCancel(DocumentCancelRequest req) =>
 			Post<DocumentCancelResponse>($"/api/v1/Documents/cancel", req, r => InitAuthRequest(r));
 
+		/// <summary>
+		///Регистрация ТС
+		/// </summary>
+		public TruckRegisterResponse TruckRegister(TruckRegisterRequest req) =>
+			Post<TruckRegisterResponse>($"/api/Truck", req, r => InitAuthRequest(r));
+
 
 		public void InitRequest(IRestRequest initReq)
         {
